@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"*.md": "git-commit",
+		"iostream": "cpp",
+		"ostream": "cpp"
+	}
+}
