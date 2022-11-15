@@ -82,27 +82,31 @@ void ingresoDeInscripciones(Curso v[], int mat[cantCursos][meses], int cant)
       mat[pos][mes - 7]++;
     else
       cout << "Inscripcion rechazada por falta de cupo" << endl;
+
+    cout << "Ingrese el codigo del curso al que quiere inscribirse: ";
+    cin >> cod;
   }
 }
 
 void punto1(int mat[cantCursos][meses], int cf, int cc)
 {
-
-  for (int i = 0; i < cc; i++)
+  for (int i = 0; i < cf; i++)
   {
     int inscriptosPorCurso = 0;
     cout << "Inscriptos del curso " << i + 1 << ":" << endl;
-    for (int j = 0; j < cf; j++)
+    for (int j = 0; j < cc; j++)
+    {
       inscriptosPorCurso += mat[i][j];
+    }
     cout << inscriptosPorCurso << endl;
   }
 
-  for (int i = 0; i < cf; i++)
+  for (int i = 0; i < cc; i++)
   {
     int inscriptosPorMes = 0;
-    cout << "Inscriptos del mes " << i + 1 << ":" << endl;
-    for (int j = 0; j < cc; j++)
-      inscriptosPorMes += mat[i][j];
+    cout << "Inscriptos del mes " << i + 7 << ":" << endl;
+    for (int j = 0; j < cf; j++)
+      inscriptosPorMes += mat[j][i];
     cout << inscriptosPorMes << endl;
   }
 }
